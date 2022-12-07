@@ -1,17 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="main.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping app</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
     <div class="main">
-        <h1>Mini Grocery App</h1>
+      <h1>Mini Grocery App</h1>
     </div>
-    <div class="container"></div>
-</body>
+
+    <div class="container">
+      <div class="filters">
+        <button onclick="getProducts('price')" class="sort">
+          Price High to Low
+        </button>
+        <button onclick="getProducts('-price')" class="sort">
+          Price Low to High
+        </button>
+        <button onclick="getProducts('name')" class="sort">
+          Name-Ascending
+        </button>
+        <button onclick="getProducts('-name')" class="sort">
+          Name-Descending
+        </button>
+        <select id="category-filter" class="sort">
+          <option value="electronics">electronics</option>
+          <option value="men's clothing">men's clothing</option>
+          <option value="women's clothing">women's clothing</option>
+          <option value="jewelery">jewelery</option>
+        </select>
+      </div>
+      <div class="products"></div>
+    </div>
+  </body>
 </html>
 <script src="test.js"></script>

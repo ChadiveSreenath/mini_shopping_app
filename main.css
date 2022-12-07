@@ -1,8 +1,11 @@
 
-
   .main{
     text-align: center;
     background-color: white;
+    position: fixed;
+    top: 0;
+    height: 4rem;
+    width: 100%;
   }
 
 *{
@@ -30,18 +33,62 @@
 }
 .container{
   width: 100%;
+  margin-top: 7rem;
+}
+.products{
   display: flex;
+  width: 100%;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  padding: 2rem;
+}
+
+@media (max-width:1024px){
+  .card{
+    width: 40%;
+  }
 }
 
 @media (max-width:580px) {
   .card{
     border: 1px solid red;
     text-align: center;
+    width: 100%;
+  }
+  .container{
+  padding: 2rem;
 
   }
+  
+}
+
+
+.filters{
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  background-color: #ffff;
+  position: fixed;
+  width: 100%;
+  top: 4rem;
+  flex-wrap: wrap;
+}
+.sort{
+  background-color: #fff;
+  border: 1px solid black;
+  color: #000;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.sort:hover{
+  border: none;
+  background-color: grey;
+  color: #fff;
+}
+.active-filter{
+  background-color: grey;
+  color: white;
+  
 }
