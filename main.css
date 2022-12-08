@@ -6,6 +6,8 @@
     top: 0;
     height: 4rem;
     width: 100%;
+    display: flex;
+    justify-content: space-evenly;
   }
 
 *{
@@ -33,7 +35,7 @@
 }
 .container{
   width: 100%;
-  margin-top: 7rem;
+  margin-top: 8rem;
 }
 .products{
   display: flex;
@@ -73,6 +75,8 @@
   width: 100%;
   top: 4rem;
   flex-wrap: wrap;
+  padding-bottom: 1rem;
+  
 }
 .sort{
   background-color: #fff;
@@ -91,4 +95,10 @@
   background-color: grey;
   color: white;
   
+}
+
+.cart{
+  font-size: xx-large;
+  text-decoration: none;
+  color: #000;
 }

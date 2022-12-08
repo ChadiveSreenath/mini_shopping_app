@@ -1,4 +1,13 @@
 
+import appendData from "./reusable.js"
+
+let container = document.querySelector(".products")
+
+
+
+let cartItems = JSON.parse(localStorage.getItem("cartItems"))||[]
+
+
 const categories = [
     "electronics",
     "jewelery",
@@ -12,36 +21,12 @@ const getProducts = async (orderBy,url="https://fakestoreapi.com/products") => {
     const response = await fetch(url)
     const data = await response.json()
     // console.table(data)
-    appendData(data)
+    appendData(data,container)
     if(orderBy)sortItems(orderBy,data)
 }
 
 getProducts()
 
-
-function appendData(data) {
-
-    let container = document.querySelector(".products")
-    container.innerHTML = null
-    data.forEach(function (item) {
-
-        let image = document.createElement("img")
-        image.setAttribute("src", item.image)
-
-        let title = document.createElement("p")
-        title.innerText = item.title
-
-        let price = document.createElement("p")
-        price.innerText = "$" + " " + item.price
-
-        let div = document.createElement("div")
-        div.classList.add("card")
-        div.append(image, title, price)
-
-        container.append(div)
-    })
-
-}
 
 
 let btnSort = document.getElementsByClassName("sort")
@@ -70,7 +55,7 @@ let sortItems = (orderBy,data)=>{
     if(orderBy==='-name'){
          sorted = data.sort((a,b)=>b.title>a.title?1:-1)
         }
-        appendData(sorted)
+        appendData(sorted,container)
 }
 
 let categoryFilter = document.getElementById("category-filter")
